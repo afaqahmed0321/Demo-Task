@@ -1,22 +1,9 @@
 import React from 'react';
-import Dining from '../assets/DiningImage.png';
-import Salon from '../assets/SalonImage.png';
-import Entertainment from '../assets/EntertainmentImage.png';
-import Cleaning from '../assets/CleaningImage.png';
+import { categoryData } from './data';
 import InfoSection from './infoSection';
 
-
 const CategorySection = () => {
-    const categories = [
-        { icon: Dining, label: "Dining" },
-        { icon: Salon, label: "Salon/Spa" },
-        { icon: Entertainment, label: "Entertainment" },
-        { icon: Cleaning, label: "Cleaning" },
-        { icon: Cleaning, label: "Cleaning" },
-        { icon: Cleaning, label: "Cleaning" },
-        { icon: Cleaning, label: "Cleaning" },
-
-    ];
+    const categories = categoryData
 
     return (
         <div className=" py-12 lg:px-28">
@@ -34,10 +21,8 @@ const CategorySection = () => {
                         </div>
                     ))}
                 </div>
-
-
             </div>
-                <InfoSection />
+            <InfoSection />
         </div>
     );
 };

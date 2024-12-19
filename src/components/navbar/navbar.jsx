@@ -1,34 +1,31 @@
 import React, { useState } from "react";
-import Logo from "../assets/Logo.png";
-import Filter from "../assets/Filter.png";
-import Buy from "../assets/Buy.png";
-import Profile from "../assets/Profile.png";
-import Toggle from "../assets/MENU.png";
-import Flag from "../assets/flag.png";
-import HomeIcon from '../assets/Home.png'
-import DiningIcon from '../assets/Dinning.png';
-import SalonIcon from '../assets/Salon.png';
-import EntertainmentIcon from '../assets/Entetainment.png';
-import HomeServicesIcon from '../assets/Home Services.png';
+import Logo from "../../assets/Logo.png";
+import Filter from "../../assets/Filter.png";
+import Buy from "../../assets/Buy.png";
+import Profile from "../../assets/Profile.png";
+import Toggle from "../../assets/MENU.png";
+import Flag from "../../assets/flag.png";
+import HomeIcon from '../../assets/Home.png'
+import DiningIcon from '../../assets/Dinning.png';
+import SalonIcon from '../../assets/Salon.png';
+import EntertainmentIcon from '../../assets/Entetainment.png';
+import HomeServicesIcon from '../../assets/Home Services.png';
 
 
 import NotificationBar from "./notificationBar";
 
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle for mobile menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const handleCountryChange = (country) => {
         console.log("Selected country:", country);
-        setDropdownOpen(false); // Close the dropdown after selection
+        setDropdownOpen(false);
     };
     return (
         <>
-            {/* Notification Bar */}
             <NotificationBar />
-
-            {/* Navbar */}
             <nav className="bg-white shadow-md">
                 <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                     <div className="flex">
@@ -132,67 +129,64 @@ const Navbar = () => {
                 </div>
 
                 <ul
-                    className={`${isMenuOpen ? "block" : "hidden"
-                        }mx-auto md:flex hidden flex-col md:flex-row items-center justify-around space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0 pb-2`}
+                    className={`${isMenuOpen ? "flex" : "hidden"
+                        }mx-auto md:flex ${!isMenuOpen && 'hidden'} flex-col md:flex-row items-center justify-around space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0 pb-2`}
                 >
                     <li>
                         <a
                             href="#home"
-                            className="flex items-center text-gray-700 hover:text-green-600 text-sm font-medium"
+                            className="flex justify-center items-center text-gray-700 hover:text-green-600 text-sm font-medium"
                         >
-                            <img src={HomeIcon} alt="Home" className="h-6 w-6 mb-1" />
+                            <img src={HomeIcon} alt="Home" className="h-6 w-6 mb-1 me-1" />
                             HOME
                         </a>
                     </li>
                     <li>
                         <a
                             href="#dining"
-                            className="flex  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
+                            className="flex justify-center  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
                         >
-                            <img src={DiningIcon} alt="Dining" className="h-6 w-6 mb-1" />
+                            <img src={DiningIcon} alt="Dining" className="h-6 w-6 mb-1 me-1" />
                             DINING
                         </a>
                     </li>
                     <li>
                         <a
                             href="#salon"
-                            className="flex  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
+                            className="flex justify-center  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
                         >
-                            <img src={SalonIcon} alt="Salon" className="h-6 w-6 mb-1" />
+                            <img src={SalonIcon} alt="Salon" className="h-6 w-6 mb-1 me-1" />
                             SALON/SPA
                         </a>
                     </li>
                     <li>
                         <a
                             href="#entertainment"
-                            className="flex  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
+                            className="flex justify-center  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
                         >
-                            <img src={EntertainmentIcon} alt="Entertainment" className="h-6 w-6 mb-1" />
+                            <img src={EntertainmentIcon} alt="Entertainment" className="h-6 w-6 mb-1 me-1" />
                             ENTERTAINMENT
                         </a>
                     </li>
                     <li>
                         <a
                             href="#services"
-                            className="flex  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
+                            className="flex justify-center  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
                         >
-                            <img src={HomeServicesIcon} alt="Home Services" className="h-6 w-6 mb-1" />
+                            <img src={HomeServicesIcon} alt="Home Services" className="h-6 w-6 mb-1 me-1" />
                             HOME SERVICES
                         </a>
                     </li>
                     <li>
                         <a
                             href="#services"
-                            className="flex  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
+                            className="flex justify-center  items-center text-gray-700 hover:text-green-600 text-sm font-medium"
                         >
-                            <img src={HomeServicesIcon} alt="Home Services" className="h-6 w-6 mb-1" />
+                            <img src={HomeServicesIcon} alt="Home Services" className="h-6 w-6 mb-1 me-1" />
                             HOME SERVICES
                         </a>
                     </li>
                 </ul>
-
-
-
             </nav>
         </>
     );
